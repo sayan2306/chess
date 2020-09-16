@@ -1,0 +1,5 @@
+package com.chess.model;
+
+public enum Color {
+    BLACK,WHITE
+}
