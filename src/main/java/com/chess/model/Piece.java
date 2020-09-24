@@ -2,6 +2,7 @@ package com.chess.model;
 
 import com.chess.moves.PossibleMovesProvider;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Piece {
@@ -42,5 +43,10 @@ public class Piece {
     public void setNumMoves(Integer numMoves) {
         this.numMoves = numMoves;
     }
+
+    public boolean isPieceFromSamePlayer(Piece piece) {
+        return piece.getColor().equals(this.color);
+    }
+
 
 }

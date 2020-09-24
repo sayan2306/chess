@@ -11,7 +11,7 @@ public abstract class Player {
         this.pieces = pieces;
     }
 
-    public Piece getPiece(PieceType pieceType) throws Exception {
+    public Piece getPiece(PieceType pieceType) throws PieceNotFoundException {
         for (Piece piece : getPieces()) {
             if (piece.getPieceType() == pieceType) {
                 return piece;
@@ -29,6 +29,4 @@ public abstract class Player {
     }
 
     //abstract public PlayerMove makeMove();
-
-
 }

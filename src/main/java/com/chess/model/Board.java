@@ -1,5 +1,10 @@
 package com.chess.model;
 
+import com.chess.blockers.PieceCellOccupyBlocker;
+import com.chess.exceptions.PieceNotFoundException;
+import sun.security.ec.point.ProjectivePoint;
+
+import java.util.ArrayList;
 import java.util.List;
 
 public class Board {
@@ -50,9 +55,13 @@ public class Board {
     }
 
 
+    public boolean isPlayerOnCheck(Player player) throws PieceNotFoundException {
+        return checkIfPieceCanBeKilled(player.getPiece(PieceType.KING), new ArrayList<>(), player);
+    }
+
     public boolean checkIfPieceCanBeKilled(Piece targetPiece, List<PieceCellOccupyBlocker> cellOccupyBlockers, Player player) {
-        for (int i = 0; i < getBoardSize(); i++) {
-            for (int j = 0; j < getBoardSize(); j++) {
+        for (int i = 0; i < this.boardSize; i++) {
+            for (int j = 0; j < this.boardSize; j++) {
                 Piece currentPiece = getCellAtLocation(i, j).getCurrentPiece();
                 if (currentPiece != null && !currentPiece.isPieceFromSamePlayer(targetPiece)) {
                     List<Cell> nextPossibleCells = currentPiece.nextPossibleCells(this, cellOccupyBlockers, player);
