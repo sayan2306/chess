@@ -55,7 +55,7 @@ public class Board {
     }
 
 
-    public boolean isPlayerOnCheck(Player player) throws PieceNotFoundException {
+    public boolean isPlayerOnCheck(Player player) {
         return checkIfPieceCanBeKilled(player.getPiece(PieceType.KING), new ArrayList<>(), player);
     }
 

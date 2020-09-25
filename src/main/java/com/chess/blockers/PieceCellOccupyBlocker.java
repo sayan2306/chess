@@ -6,5 +6,5 @@ import com.chess.model.Piece;
 import com.chess.model.Player;
 
 public interface PieceCellOccupyBlocker {
-    public boolean isCellNonOccupiableForPiece(Piece piece, Cell cell, Player player, Board board) throws Exception;
+    public boolean isCellNonOccupiableForPiece(Piece piece, Cell cell, Player player, Board board);
 }

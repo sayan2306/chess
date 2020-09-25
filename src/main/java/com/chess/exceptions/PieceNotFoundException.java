@@ -1,4 +1,4 @@
 package com.chess.exceptions;
 
-public class PieceNotFoundException extends Exception{
+public class PieceNotFoundException extends RuntimeException{
 }

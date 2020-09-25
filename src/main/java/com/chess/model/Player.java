@@ -11,7 +11,7 @@ public abstract class Player {
         this.pieces = pieces;
     }
 
-    public Piece getPiece(PieceType pieceType) throws PieceNotFoundException {
+    public Piece getPiece(PieceType pieceType) {
         for (Piece piece : getPieces()) {
             if (piece.getPieceType() == pieceType) {
                 return piece;
